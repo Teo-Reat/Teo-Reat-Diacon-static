@@ -5322,17 +5322,29 @@ a {
 }
 
 .footer {
-    background: #0a6297;
     color: #fff
 }
 
 .about {
     padding: 40px 0 70px;
     text-align: center;
-    background: url(images/bg-footer.png);
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat
+    position: relative
+}
+
+.about__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1
+}
+
+.about__bg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center
 }
 
 .about__contacts {
@@ -5384,6 +5396,7 @@ a {
 }
 
 .stuff {
+    background: #0a6297;
     color: #fff;
     font-size: 14px;
     font-weight: 400;

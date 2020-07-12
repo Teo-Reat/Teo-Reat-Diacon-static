@@ -174,7 +174,7 @@
 				var t, n, i, o, r, s, a, l, c, d, u, p, f, h, v, g, y, m, w, b = "sizzle" + 1 * new Date,
 					x = e.document, k = 0, T = 0, S = le(), C = le(), $ = le(), A = le(), E = function (e, t) {
 						return e === t && (u = !0), 0
-					}, j = {}.hasOwnProperty, D = [], L = D.pop, O = D.push, H = D.push, N = D.slice, _ = function (e, t) {
+					}, j = {}.hasOwnProperty, D = [], O = D.pop, L = D.push, H = D.push, N = D.slice, _ = function (e, t) {
 						for (var n = 0, i = e.length; n < i; n++) if (e[n] === t) return n;
 						return -1
 					},
@@ -212,7 +212,7 @@
 				} catch (e) {
 					H = {
 						apply: D.length ? function (e, t) {
-							O.apply(e, N.call(t))
+							L.apply(e, N.call(t))
 						} : function (e, t) {
 							for (var n = e.length, i = 0; e[n++] = t[i++];) ;
 							e.length = n - 1
@@ -695,7 +695,7 @@
 								if (y += m, n && m !== y) {
 									for (h = 0; g = t[h++];) g(w, b, s, a);
 									if (r) {
-										if (y > 0) for (; m--;) w[m] || b[m] || (b[m] = L.call(l));
+										if (y > 0) for (; m--;) w[m] || b[m] || (b[m] = O.call(l));
 										b = ke(b)
 									}
 									H.apply(l, b), d && !r && b.length > 0 && y + t.length > 1 && ae.uniqueSort(l)
@@ -754,7 +754,7 @@
 
 		var D = /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i;
 
-		function L(e, t, n) {
+		function O(e, t, n) {
 			return y(t) ? T.grep(e, (function (e, i) {
 				return !!t.call(e, i, e) !== n
 			})) : t.nodeType ? T.grep(e, (function (e) {
@@ -778,18 +778,18 @@
 				for (n = this.pushStack([]), t = 0; t < i; t++) T.find(e, o[t], n);
 				return i > 1 ? T.uniqueSort(n) : n
 			}, filter: function (e) {
-				return this.pushStack(L(this, e || [], !1))
+				return this.pushStack(O(this, e || [], !1))
 			}, not: function (e) {
-				return this.pushStack(L(this, e || [], !0))
+				return this.pushStack(O(this, e || [], !0))
 			}, is: function (e) {
-				return !!L(this, "string" == typeof e && E.test(e) ? T(e) : e || [], !1).length
+				return !!O(this, "string" == typeof e && E.test(e) ? T(e) : e || [], !1).length
 			}
 		});
-		var O, H = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;
+		var L, H = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;
 		(T.fn.init = function (e, t, n) {
 			var i, o;
 			if (!e) return this;
-			if (n = n || O, "string" == typeof e) {
+			if (n = n || L, "string" == typeof e) {
 				if (!(i = "<" === e[0] && ">" === e[e.length - 1] && e.length >= 3 ? [null, e, null] : H.exec(e)) || !i[1] && t) return !t || t.jquery ? (t || n).find(e) : this.constructor(t).find(e);
 				if (i[1]) {
 					if (t = t instanceof T ? t[0] : t, T.merge(this, T.parseHTML(i[1], t && t.nodeType ? t.ownerDocument || t : w, !0)), D.test(i[1]) && T.isPlainObject(t)) for (i in t) y(this[i]) ? this[i](t[i]) : this.attr(i, t[i]);
@@ -798,7 +798,7 @@
 				return (o = w.getElementById(i[2])) && (this[0] = o, this.length = 1), this
 			}
 			return e.nodeType ? (this[0] = e, this.length = 1, this) : y(e) ? void 0 !== n.ready ? n.ready(e) : e(T) : T.makeArray(e, this)
-		}).prototype = T.fn, O = T(w);
+		}).prototype = T.fn, L = T(w);
 		var N = /^(?:parents|prev(?:Until|All))/, _ = {children: !0, contents: !0, next: !0, prev: !0};
 
 		function P(e, t) {
@@ -1447,7 +1447,7 @@
 				}))
 			}
 		});
-		var Le = /<script|<style|<link/i, Oe = /checked\s*(?:[^=]|=\s*.checked.)/i,
+		var Oe = /<script|<style|<link/i, Le = /checked\s*(?:[^=]|=\s*.checked.)/i,
 			He = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
 
 		function Ne(e, t) {
@@ -1478,7 +1478,7 @@
 		function Ie(e, t, n, i) {
 			t = l(t);
 			var o, r, s, a, c, d, u = 0, p = e.length, f = p - 1, h = t[0], v = y(h);
-			if (v || p > 1 && "string" == typeof h && !g.checkClone && Oe.test(h)) return e.each((function (o) {
+			if (v || p > 1 && "string" == typeof h && !g.checkClone && Le.test(h)) return e.each((function (o) {
 				var r = e.eq(o);
 				v && (t[0] = h.call(this, o, r.html())), Ie(r, t, n, i)
 			}));
@@ -1552,7 +1552,7 @@
 				return B(this, (function (e) {
 					var t = this[0] || {}, n = 0, i = this.length;
 					if (void 0 === e && 1 === t.nodeType) return t.innerHTML;
-					if ("string" == typeof e && !Le.test(e) && !me[(ge.exec(e) || ["", ""])[1].toLowerCase()]) {
+					if ("string" == typeof e && !Oe.test(e) && !me[(ge.exec(e) || ["", ""])[1].toLowerCase()]) {
 						e = T.htmlPrefilter(e);
 						try {
 							for (; n < i; n++) 1 === (t = this[n] || {}).nodeType && (T.cleanData(we(t, !1)), t.innerHTML = e);
@@ -2169,11 +2169,11 @@
 		var At = /\[\]$/, Et = /\r?\n/g, jt = /^(?:submit|button|image|reset|file)$/i,
 			Dt = /^(?:input|select|textarea|keygen)/i;
 
-		function Lt(e, t, n, i) {
+		function Ot(e, t, n, i) {
 			var o;
 			if (Array.isArray(t)) T.each(t, (function (t, o) {
-				n || At.test(e) ? i(e, o) : Lt(e + "[" + ("object" == typeof o && null != o ? t : "") + "]", o, n, i)
-			})); else if (n || "object" !== k(t)) i(e, t); else for (o in t) Lt(e + "[" + o + "]", t[o], n, i)
+				n || At.test(e) ? i(e, o) : Ot(e + "[" + ("object" == typeof o && null != o ? t : "") + "]", o, n, i)
+			})); else if (n || "object" !== k(t)) i(e, t); else for (o in t) Ot(e + "[" + o + "]", t[o], n, i)
 		}
 
 		T.param = function (e, t) {
@@ -2184,7 +2184,7 @@
 			if (null == e) return "";
 			if (Array.isArray(e) || e.jquery && !T.isPlainObject(e)) T.each(e, (function () {
 				o(this.name, this.value)
-			})); else for (n in e) Lt(n, e[n], t, o);
+			})); else for (n in e) Ot(n, e[n], t, o);
 			return i.join("&")
 		}, T.fn.extend({
 			serialize: function () {
@@ -2204,7 +2204,7 @@
 				})).get()
 			}
 		});
-		var Ot = /%20/g, Ht = /#.*$/, Nt = /([?&])_=[^&]*/, _t = /^(.*?):[ \t]*([^\r\n]*)$/gm, Pt = /^(?:GET|HEAD)$/,
+		var Lt = /%20/g, Ht = /#.*$/, Nt = /([?&])_=[^&]*/, _t = /^(.*?):[ \t]*([^\r\n]*)$/gm, Pt = /^(?:GET|HEAD)$/,
 			qt = /^\/\//, Mt = {}, It = {}, zt = "*/".concat("*"), Wt = w.createElement("a");
 
 		function Rt(e) {
@@ -2300,7 +2300,7 @@
 					}
 				}
 				if (f.data && f.processData && "string" != typeof f.data && (f.data = T.param(f.data, f.traditional)), Ft(Mt, f, t, S), c) return S;
-				for (u in (d = T.event && f.global) && 0 == T.active++ && T.event.trigger("ajaxStart"), f.type = f.type.toUpperCase(), f.hasContent = !Pt.test(f.type), o = f.url.replace(Ht, ""), f.hasContent ? f.data && f.processData && 0 === (f.contentType || "").indexOf("application/x-www-form-urlencoded") && (f.data = f.data.replace(Ot, "+")) : (p = f.url.slice(o.length), f.data && (f.processData || "string" == typeof f.data) && (o += ($t.test(o) ? "&" : "?") + f.data, delete f.data), !1 === f.cache && (o = o.replace(Nt, "$1"), p = ($t.test(o) ? "&" : "?") + "_=" + Ct.guid++ + p), f.url = o + p), f.ifModified && (T.lastModified[o] && S.setRequestHeader("If-Modified-Since", T.lastModified[o]), T.etag[o] && S.setRequestHeader("If-None-Match", T.etag[o])), (f.data && f.hasContent && !1 !== f.contentType || t.contentType) && S.setRequestHeader("Content-Type", f.contentType), S.setRequestHeader("Accept", f.dataTypes[0] && f.accepts[f.dataTypes[0]] ? f.accepts[f.dataTypes[0]] + ("*" !== f.dataTypes[0] ? ", " + zt + "; q=0.01" : "") : f.accepts["*"]), f.headers) S.setRequestHeader(u, f.headers[u]);
+				for (u in (d = T.event && f.global) && 0 == T.active++ && T.event.trigger("ajaxStart"), f.type = f.type.toUpperCase(), f.hasContent = !Pt.test(f.type), o = f.url.replace(Ht, ""), f.hasContent ? f.data && f.processData && 0 === (f.contentType || "").indexOf("application/x-www-form-urlencoded") && (f.data = f.data.replace(Lt, "+")) : (p = f.url.slice(o.length), f.data && (f.processData || "string" == typeof f.data) && (o += ($t.test(o) ? "&" : "?") + f.data, delete f.data), !1 === f.cache && (o = o.replace(Nt, "$1"), p = ($t.test(o) ? "&" : "?") + "_=" + Ct.guid++ + p), f.url = o + p), f.ifModified && (T.lastModified[o] && S.setRequestHeader("If-Modified-Since", T.lastModified[o]), T.etag[o] && S.setRequestHeader("If-None-Match", T.etag[o])), (f.data && f.hasContent && !1 !== f.contentType || t.contentType) && S.setRequestHeader("Content-Type", f.contentType), S.setRequestHeader("Accept", f.dataTypes[0] && f.accepts[f.dataTypes[0]] ? f.accepts[f.dataTypes[0]] + ("*" !== f.dataTypes[0] ? ", " + zt + "; q=0.01" : "") : f.accepts["*"]), f.headers) S.setRequestHeader(u, f.headers[u]);
 				if (f.beforeSend && (!1 === f.beforeSend.call(h, S, f) || c)) return S.abort();
 				if (k = "abort", y.add(f.complete), S.done(f.success), S.fail(f.error), i = Ft(It, f, t, S)) {
 					if (S.readyState = 1, d && v.trigger("ajaxSend", [S, f]), c) return S;
@@ -2614,12 +2614,12 @@
 		}, void 0 === o && (n.jQuery = n.$ = T), T
 	}))
 }, function (e, t, n) {
-	n(2), e.exports = n(6)
+	n(2), e.exports = n(5)
 }, function (e, t, n) {
 	"use strict";
 	n.r(t);
-	n(5);
-	window.$ = window.jQuery = n(0), n(3), n(4), $(document).ready((function () {
+	n(4);
+	window.$ = window.jQuery = n(0), n(3), $(document).ready((function () {
 		function e() {
 			$(window).scrollTop() > 0 ? ($(".js-fixed").addClass("fixed"), $(".js-search__results").addClass("fixed__results"), $(".js-main").addClass("is-fixed")) : ($(".js-fixed").removeClass("fixed"), $(".js-search__results").removeClass("fixed__results"), $(".js-main").removeClass("is-fixed"))
 		}
@@ -2654,6 +2654,75 @@
 			$(".js-search").removeClass("search__open"), $(".js-search__results").slideUp()
 		})), $(".js-network__select").niceSelect(), $(".js-navigation__products").click((function () {
 			$(".navigation__products__wrapper").toggleClass("js-hover")
+		})), $((function () {
+			if ($("#map").length) {
+				var e = [[54.942092, 37.40522], [54.974596, 37.445918], [55.843894, 38.731038]], t = $("#map").height();
+				ymaps.ready((function () {
+					var n = new ymaps.Map("map", {
+							center: [54.942092, 37.40522],
+							zoom: 6,
+							behaviors: ["default"],
+							controls: []
+						}),
+						i = ymaps.templateLayoutFactory.createClass('<span style="font-weight: 600;font-size: 18px;">{{ properties.geoObjects.length }}</span>'),
+						o = new ymaps.Clusterer({
+							clusterIcons: [{
+								href: "images/mark-big.svg",
+								size: [57, 67],
+								offset: [-27.5, -67],
+								iconContentOffset: [23, 15]
+							}, {
+								href: "images/mark-big.svg",
+								size: [90, 108],
+								offset: [-45, -108],
+								iconContentOffset: [25, 25]
+							}], clusterNumbers: [100], clusterIconContentLayout: i
+						}),
+						r = ymaps.templateLayoutFactory.createClass('<div class="popover"><div class="popover__arrow"></div><div class="popover__inner"><a class="popover__close" href="#"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>$[[options.contentLayout observeSize minWidth=300 maxWidth=366]]<span class="popover__tail"></span></div></div>', {
+							build: function () {
+								this.constructor.superclass.build.call(this), this._$element = $(".popover", this.getParentElement()), this.applyElementOffset(), this._$element.find(".popover__close").on("click", $.proxy(this.onCloseClick, this))
+							}, clear: function () {
+								this._$element.find(".popover__close").off("click"), this.constructor.superclass.clear.call(this)
+							}, onSublayoutSizeChange: function () {
+								r.superclass.onSublayoutSizeChange.apply(this, arguments), this._isElement(this._$element) && (this.applyElementOffset(), this.events.fire("shapechange"))
+							}, applyElementOffset: function () {
+								this._$element.css({
+									left: -this._$element[0].offsetWidth / 2,
+									top: -(this._$element[0].offsetHeight + this._$element.find(".popover__arrow")[0].offsetHeight)
+								})
+							}, onCloseClick: function (e) {
+								e.preventDefault(), this.events.fire("userclose")
+							}, getShape: function () {
+								if (!this._isElement(this._$element)) return r.superclass.getShape.call(this);
+								var e = this._$element.position();
+								return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([[e.left, e.top], [e.left + this._$element[0].offsetWidth, e.top + this._$element[0].offsetHeight + this._$element.find(".popover__arrow")[0].offsetHeight]]))
+							}, _isElement: function (e) {
+								return e && e[0] && e.find(".popover__arrow")[0]
+							}
+						}),
+						s = ymaps.templateLayoutFactory.createClass('<div class="popover__content">$[properties.balloonContent]</div>');
+					n.behaviors.disable(["scrollZoom"]);
+					for (var a = [], l = 0; l < e.length; l++) {
+						var c = e[l];
+						a[l] = new ymaps.Placemark(c, {
+							balloonContent: '<div class="ballon"><div class="ballon__head"><div class="baloon__logo"><img src="img/logo.svg" alt="Магазин в Серпухове" title="Магазин в Серпухове" /></div><div class="ballon__name">Магазин в Серпухове</div></div><div class="baloon__body"><div class="baloon__line"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg><a href="tel:+7 (926) 047-32-22">+7 (926) 047-32-22</a></div><div class="baloon__line"><svg class="icon icon-worktime"><use xlink:href="#icon-worktime"></use></svg><span>с 10:00 до 22:00</span></div><div class="baloon__line"><svg class="icon icon-address"><use xlink:href="#icon-address"></use></svg><span>Московская область, город Серпухов, Московское шоссе, 55</span></div></div></div>',
+							hintContent: "Магазин в Серпухове"
+						}, {
+							balloonLayout: r,
+							balloonContentLayout: s,
+							iconLayout: "default#image",
+							iconImageHref: "images/mark-small.svg",
+							iconImageSize: [39, 45],
+							iconImageOffset: [-19.5, -45]
+						})
+					}
+					o.add(a), n.geoObjects.add(o), n.controls.add("zoomControl", {
+						size: "small",
+						float: "none",
+						position: {top: t / 2 - 30, right: "45px"}
+					})
+				}))
+			}
 		}))
 	}))
 }, function (e, t) {
@@ -2712,73 +2781,6 @@
 			return i.cssText = "pointer-events:auto", "auto" !== i.pointerEvents && e("html").addClass("no-csspointerevents"), this
 		}
 	}(jQuery)
-}, function (e, t) {
-	$((function () {
-		if ($("#map").length) {
-			var e = [[54.942092, 37.40522], [54.974596, 37.445918], [55.843894, 38.731038]], t = $("#map").height();
-			ymaps.ready((function () {
-				var n = new ymaps.Map("map", {
-						center: [54.942092, 37.40522],
-						zoom: 6,
-						behaviors: ["default"],
-						controls: []
-					}),
-					i = ymaps.templateLayoutFactory.createClass('<span style="font-weight: 600;font-size: 18px;">{{ properties.geoObjects.length }}</span>'),
-					o = new ymaps.Clusterer({
-						clusterIcons: [{
-							href: "images/mark-big.svg",
-							size: [45, 58],
-							offset: [-23, -58]
-						}, {href: "images/mark-big.svg", size: [90, 90], offset: [-23, -58]}],
-						clusterNumbers: [100],
-						clusterIconContentLayout: i
-					}),
-					r = ymaps.templateLayoutFactory.createClass('<div class="popover"><div class="popover__arrow"></div><div class="popover__inner"><a class="popover__close" href="#"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>$[[options.contentLayout observeSize minWidth=300 maxWidth=366]]<span class="popover__tail"></span></div></div>', {
-						build: function () {
-							this.constructor.superclass.build.call(this), this._$element = $(".popover", this.getParentElement()), this.applyElementOffset(), this._$element.find(".popover__close").on("click", $.proxy(this.onCloseClick, this))
-						}, clear: function () {
-							this._$element.find(".popover__close").off("click"), this.constructor.superclass.clear.call(this)
-						}, onSublayoutSizeChange: function () {
-							r.superclass.onSublayoutSizeChange.apply(this, arguments), this._isElement(this._$element) && (this.applyElementOffset(), this.events.fire("shapechange"))
-						}, applyElementOffset: function () {
-							this._$element.css({
-								left: -this._$element[0].offsetWidth / 2,
-								top: -(this._$element[0].offsetHeight + this._$element.find(".popover__arrow")[0].offsetHeight)
-							})
-						}, onCloseClick: function (e) {
-							e.preventDefault(), this.events.fire("userclose")
-						}, getShape: function () {
-							if (!this._isElement(this._$element)) return r.superclass.getShape.call(this);
-							var e = this._$element.position();
-							return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([[e.left, e.top], [e.left + this._$element[0].offsetWidth, e.top + this._$element[0].offsetHeight + this._$element.find(".popover__arrow")[0].offsetHeight]]))
-						}, _isElement: function (e) {
-							return e && e[0] && e.find(".popover__arrow")[0]
-						}
-					}),
-					s = ymaps.templateLayoutFactory.createClass('<div class="popover__content">$[properties.balloonContent]</div>');
-				n.behaviors.disable(["scrollZoom"]);
-				for (var a = [], l = 0; l < e.length; l++) {
-					var c = e[l];
-					a[l] = new ymaps.Placemark(c, {
-						balloonContent: '<div class="ballon"><div class="ballon__head"><div class="baloon__logo"><img src="img/logo.svg" alt="Магазин в Серпухове" title="Магазин в Серпухове" /></div><div class="ballon__name">Магазин в Серпухове</div></div><div class="baloon__body"><div class="baloon__line"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg><a href="tel:+7 (926) 047-32-22">+7 (926) 047-32-22</a></div><div class="baloon__line"><svg class="icon icon-worktime"><use xlink:href="#icon-worktime"></use></svg><span>с 10:00 до 22:00</span></div><div class="baloon__line"><svg class="icon icon-address"><use xlink:href="#icon-address"></use></svg><span>Московская область, город Серпухов, Московское шоссе, 55</span></div></div></div>',
-						hintContent: "Магазин в Серпухове"
-					}, {
-						balloonLayout: r,
-						balloonContentLayout: s,
-						iconLayout: "default#image",
-						iconImageHref: "images/mark-small.svg",
-						iconImageSize: [32, 42],
-						iconImageOffset: [-16, -42]
-					})
-				}
-				o.add(a), n.geoObjects.add(o), n.controls.add("zoomControl", {
-					size: "small",
-					float: "none",
-					position: {top: t / 2 - 30, right: "45px"}
-				})
-			}))
-		}
-	}))
 }, function (e, t, n) {
 	var i, o, r;
 	!function (s) {
