@@ -1083,6 +1083,7 @@ a {
         display: block;
         font-size: 16px;
         font-weight: 400;
+        color: #000;
         transition: .3s;
         position: relative
     }
@@ -1620,8 +1621,7 @@ a {
     .navigation__list {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-between;
-        background: #fff
+        justify-content: space-between
     }
 
     .navigation__list__item > a:after {
