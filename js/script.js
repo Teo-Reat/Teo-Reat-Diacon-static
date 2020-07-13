@@ -72,13 +72,13 @@ $(document).ready(() => {
 	//Search menu open
 	$('.js-header__search__button').click(() => {
 		$('.js-search').addClass('search__open')
-		$('.js-search__results').slideDown()
+		$('.js-search__results').show()
 	})
 
 	//Search menu close
 	$('.js-search__close').click(() => {
 		$('.js-search').removeClass('search__open')
-		$('.js-search__results').slideUp()
+		$('.js-search__results').hide()
 	})
 
 	//Styles for "select" tag

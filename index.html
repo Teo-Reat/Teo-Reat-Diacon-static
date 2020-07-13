@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/_normalize.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/nice-select.css">
-    <link href=css/style.css rel=stylesheet>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <svg aria-hidden=true style="position: absolute; width: 0; height: 0; overflow: hidden;" version=1.1
@@ -778,7 +778,7 @@
     </defs>
 </svg>
 <header class="header js-fixed">
-    <section class=container>
+    <section class="container header__top">
         <div class=row>
             <div class="col-12 header__wrapper">
                 <div class=header__logo><img src=images/logo.svg alt=Logotype></div>
@@ -833,7 +833,7 @@
                         <div class="js-language language">
                             <ul class=language__list>
                                 <li class=language__list__item><a href=#>rus</a></li>
-                                <li class=language__list__item><a href=#>eng</a></li>
+                                <li class="language__list__item language__list__item-active"><a>eng</a></li>
                                 <li class=language__list__item><a href=#>chi</a></li>
                             </ul>
                         </div>
@@ -1156,7 +1156,7 @@
     <section class=news>
         <div class=container>
             <div class="row news__wrapper">
-                <div class="news__item news__company col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4"><a href=# class="news__item news__company">
                     <div class=news__bg><img src=images/urology.jpg alt=""></div>
                     <div class=news__item__billet>НОВОСТИ КОМПАНИИ</div>
                     <div class=news__item__description>
@@ -1165,24 +1165,27 @@
                                 <use xlink:href=#icon-time></use>
                             </svg>
                             <span>11 февраля</span></div>
-                        <a href=# class=news__item__title>Цистатин С (Cystatin C FS) - новый золотой стандарт и маркер в
-                            иммунотурбидиметрии</a></div>
+                        <span class=news__item__title>Цистатин С (Cystatin C FS) - новый золотой стандарт и маркер в иммунотурбидиметрии</span>
+                    </div>
+                </a></div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="news__item news__industry">
+                        <div class=news__item__billet>НОВОСТИ ОТРАСЛИ</div>
+                        <div class=news__item__date>
+                            <svg class="icon icon-time">
+                                <use xlink:href=#icon-time></use>
+                            </svg>
+                            <span>20 марта</span></div>
+                        <a href=# class=news__item__title>Пресепсин будет внесен в стандарты оказания медицинской
+                            помощи</a>
+                        <div class=news__item__date>
+                            <svg class="icon icon-time">
+                                <use xlink:href=#icon-time></use>
+                            </svg>
+                            <span>11 февраля</span></div>
+                        <a href=# class=news__item__title>Плохой Х-ЛПНП ― это просто раздутый миф</a></div>
                 </div>
-                <div class="news__item news__industry col-12 col-md-6 col-lg-4">
-                    <div class=news__item__billet>НОВОСТИ ОТРАСЛИ</div>
-                    <div class=news__item__date>
-                        <svg class="icon icon-time">
-                            <use xlink:href=#icon-time></use>
-                        </svg>
-                        <span>20 марта</span></div>
-                    <a href=# class=news__item__title>Пресепсин будет внесен в стандарты оказания медицинской помощи</a>
-                    <div class=news__item__date>
-                        <svg class="icon icon-time">
-                            <use xlink:href=#icon-time></use>
-                        </svg>
-                        <span>11 февраля</span></div>
-                    <a href=# class=news__item__title>Плохой Х-ЛПНП ― это просто раздутый миф</a></div>
-                <div class="news__item news__events col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4"><a class="news__item news__events" href=#>
                     <div class=news__bg><img src=images/atm.jpg alt=""></div>
                     <div class=news__item__billet>события</div>
                     <div class=news__item__description>
@@ -1191,10 +1194,10 @@
                                 <use xlink:href=#icon-time></use>
                             </svg>
                             <span>7 апреля</span></div>
-                        <a href=# class=news__item__title>Алгоритмы экспресс диагностики критических состояний:
-                            анализатор PATHFAST</a></div>
-                </div>
-                <div class="news__item news__webinars col-12 col-md-6 col-lg-4">
+                        <span class=news__item__title>Алгоритмы экспресс диагностики критических состояний: анализатор PATHFAST</span>
+                    </div>
+                </a></div>
+                <div class="col-12 col-md-6 col-lg-4"><a class="news__item news__webinars" href=#>
                     <div class=news__bg><img src=images/cystatin.jpg alt=""></div>
                     <div class=news__item__billet>вебинары</div>
                     <div class=news__item__description>
@@ -1203,45 +1206,45 @@
                                 <use xlink:href=#icon-time></use>
                             </svg>
                             <span>11 февраля</span></div>
-                        <a href=# class=news__item__title>Цистатин С (Cystatin C FS) - новый золотой стандарт и маркер в
-                            иммунотурбидиметрии</a></div>
-                </div>
-                <div class="news__item news__actions col-12 col-md-6 col-lg-4">
-                    <div class=news__item__billet>акции</div>
-                    <div class=news__actions__slider>
-                        <div class=news__actions__slider__item>
-                            <div class=news__item__image><img src=images/pronadisa.jpg alt=Conda></div>
-                            <div class=news__item__title>Распродажа продукции испанской компании CONDA «Pronadisa»</div>
-                        </div>
-                        <div class=news__actions__slider__item>
-                            <div class=news__item__image><img src=images/pronadisa.jpg alt=Conda></div>
-                            <div class=news__item__title>Распродажа продукции испанской компании CONDA «Pronadisa»</div>
+                        <span class=news__item__title>Цистатин С (Cystatin C FS) - новый золотой стандарт и маркер в иммунотурбидиметрии</span>
+                    </div>
+                </a></div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="news__item news__actions">
+                        <div class=news__actions__brand><img src=images/conda.jpg alt=Conda></div>
+                        <div class=news__item__billet>акции</div>
+                        <div class=news__actions__slider>
+                            <div class=news__actions__slider__item><a class=news__item__image href=#><img
+                                    src=images/pronadisa.jpg alt=Conda> </a><a class=news__item__title href=#>Распродажа
+                                продукции испанской компании CONDA «Pronadisa»</a></div>
+                            <div class=news__actions__slider__item><a class=news__item__image href=#><img
+                                    src=images/pronadisa.jpg alt=Conda> </a><a class=news__item__title href=#>Распродажа
+                                продукции испанской компании CONDA «Pronadisa»</a></div>
                         </div>
                     </div>
                 </div>
-                <div class="news__item col-12 col-md-6 col-lg-4">
-                    <div class=news__item__wrapper>
-                        <div class=news__item__subitem><a href=# class=news__subitem__description>Библиотека</a>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class=news__item>
+                        <div class=news__item__wrapper><a class=news__item__subitem href=#><span
+                                class=news__subitem__description>Библиотека</span>
                             <div class=news__subitem__image>
                                 <svg class="icon icon-block_1">
                                     <use xlink:href=#icon-block_1></use>
                                 </svg>
                             </div>
-                        </div>
-                        <div class=news__item__subitem><a href=# class=news__subitem__description>Сервис</a>
+                        </a><a class=news__item__subitem href=#><span class=news__subitem__description>Сервис</span>
                             <div class=news__subitem__image>
                                 <svg class="icon icon-block_2">
                                     <use xlink:href=#icon-block_2></use>
                                 </svg>
                             </div>
-                        </div>
-                        <div class=news__item__subitem><a href=# class=news__subitem__description>Вакансии</a>
+                        </a><a class=news__item__subitem href=#><span class=news__subitem__description>Вакансии</span>
                             <div class=news__subitem__image>
                                 <svg class="icon icon-block_3">
                                     <use xlink:href=#icon-block_3></use>
                                 </svg>
                             </div>
-                        </div>
+                        </a></div>
                     </div>
                 </div>
             </div>
@@ -1250,7 +1253,9 @@
     <section class=network>
         <div class=container>
             <div class=row>
-                <div class="col-12 col-md-6"><h2 class=network__title>Дилерская сеть</h2></div>
+                <div class="col-12 col-md-6">
+                    <div class=network__title__wrapper><h2 class=network__title>Дилерская сеть</h2></div>
+                </div>
                 <div class="col-12 col-md-5 ml-auto"><label class=network__select__label for=network__select></label>
                     <select name=network id=network__select class="js-network__select wide network__select">
                         <option value=1>Москва</option>
@@ -1269,9 +1274,9 @@
         <div class=about__bg><img src=images/bg-footer.jpg alt=""></div>
         <div class=container>
             <div class=row>
-                <div class="col-12 col-md-6 col-lg-8">
+                <div class="col-12 col-md-8 col-lg-8">
                     <div class=row>
-                        <ul class="about__menu col-lg-4">
+                        <ul class="about__menu col-lg-10">
                             <li class=about__menu__item><a href=#>О компании</a></li>
                             <li class=about__menu__item><a href=#>Пресс-центр</a></li>
                             <li class=about__menu__item><a href=#>Новинки и акции</a></li>
@@ -1280,26 +1285,24 @@
                             <li class=about__menu__item><a href=#>Библиотека</a></li>
                             <li class=about__menu__item><a href=#>Вебинары</a></li>
                             <li class=about__menu__item><a href=#>﻿Контакты</a></li>
-                            <li class=about__menu__item><a href=#>Продукты</a></li>
+                            <li class=about__menu__item><a href=#>Продукты</a>
+                                <ul class=about__submenu>
+                                    <li class=about__submenu__item><a href=#>Централизация</a></li>
+                                    <li class=about__submenu__item><a href=#>Гематология</a></li>
+                                    <li class=about__submenu__item><a href=#>Экспресс-диагностика</a></li>
+                                    <li class=about__submenu__item><a href=#>Иммунохимия</a></li>
+                                    <li class=about__submenu__item><a href=#>Преаналитика</a></li>
+                                    <li class=about__submenu__item><a href=#>Клиническая химия</a></li>
+                                    <li class=about__submenu__item><a href=#>Гемостаз</a></li>
+                                    <li class=about__submenu__item><a href=#>Анализ мочи</a></li>
+                                    <li class=about__submenu__item><a href=#>Иммуногематология</a></li>
+                                    <li class=about__submenu__item><a href=#>Микробиология</a></li>
+                                </ul>
+                            </li>
                         </ul>
-                        <div class="about__submenu__wrapper col-lg-8">
-                            <div class=about__submenu__title>Продукты</div>
-                            <ul class=about__submenu>
-                                <li class=about__submenu__item><a href=#>Централизация</a></li>
-                                <li class=about__submenu__item><a href=#>Гематология</a></li>
-                                <li class=about__submenu__item><a href=#>Экспресс-диагностика</a></li>
-                                <li class=about__submenu__item><a href=#>Иммунохимия</a></li>
-                                <li class=about__submenu__item><a href=#>Преаналитика</a></li>
-                                <li class=about__submenu__item><a href=#>Клиническая химия</a></li>
-                                <li class=about__submenu__item><a href=#>Гемостаз</a></li>
-                                <li class=about__submenu__item><a href=#>Анализ мочи</a></li>
-                                <li class=about__submenu__item><a href=#>Иммуногематология</a></li>
-                                <li class=about__submenu__item><a href=#>Микробиология</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
-                <div class="about__contacts col-12 col-md-6 col-lg-4 col-xl-3 ml-auto"><strong class=about__hot__phone>8
+                <div class="about__contacts col-12 col-md-4 col-lg-4 col-xl-3 ml-auto"><strong class=about__hot__phone>8
                     800 2006 339</strong>
                     <p class=about__hot__description>Телефон горячей линии</p><strong class=about__phone>+7 (495) 980 63
                         39</strong> <span class=about__email>sale@diakonlab.ru</span>
