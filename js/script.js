@@ -2650,10 +2650,12 @@
 			$(".js-mobile").slideToggle(), $(".js-header__menu__btn").toggleClass("header__menu__btn_close")
 		})), $(".js-header__search__button").click((function () {
 			$(".js-search").addClass("search__open"), $(".js-search__results").slideDown()
-		})), $(".js-search__form__close").click((function () {
+		})), $(".js-search__close").click((function () {
 			$(".js-search").removeClass("search__open"), $(".js-search__results").slideUp()
 		})), $(".js-network__select").niceSelect(), $(".js-navigation__products").click((function () {
 			$(".navigation__products__wrapper").toggleClass("js-hover")
+		})), $(".js-header__language").click((function () {
+			$(".js-language").slideToggle()
 		})), $((function () {
 			if ($("#map").length) {
 				var e = [[54.942092, 37.40522], [54.974596, 37.445918], [55.843894, 38.731038]], t = $("#map").height();
@@ -2678,7 +2680,7 @@
 								iconContentOffset: [25, 25]
 							}], clusterNumbers: [100], clusterIconContentLayout: i
 						}),
-						r = ymaps.templateLayoutFactory.createClass('<div class="popover"><div class="popover__arrow"></div><div class="popover__inner"><a class="popover__close" href="#"><svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg></a>$[[options.contentLayout observeSize minWidth=300 maxWidth=366]]<span class="popover__tail"></span></div></div>', {
+						r = ymaps.templateLayoutFactory.createClass('\n<div class="popover">\n\t<div class="popover__arrow"></div>\n\t<div class="popover__inner">\n\t\t<a class="popover__close" href="#">\n\t\t\t<svg class="icon icon-close">\n\t\t\t\t<use xlink:href="#icon-close"></use>\n\t\t\t</svg>\n\t\t</a>\n\t\t$[[options.contentLayout observeSize minWidth=300 maxWidth=432]]\n\t\t<span class="popover__tail"></span>\n\t</div>\n</div>\n', {
 							build: function () {
 								this.constructor.superclass.build.call(this), this._$element = $(".popover", this.getParentElement()), this.applyElementOffset(), this._$element.find(".popover__close").on("click", $.proxy(this.onCloseClick, this))
 							}, clear: function () {
@@ -2705,7 +2707,7 @@
 					for (var a = [], l = 0; l < e.length; l++) {
 						var c = e[l];
 						a[l] = new ymaps.Placemark(c, {
-							balloonContent: '<div class="ballon"><div class="ballon__head"><div class="baloon__logo"><img src="img/logo.svg" alt="Магазин в Серпухове" title="Магазин в Серпухове" /></div><div class="ballon__name">Магазин в Серпухове</div></div><div class="baloon__body"><div class="baloon__line"><svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg><a href="tel:+7 (926) 047-32-22">+7 (926) 047-32-22</a></div><div class="baloon__line"><svg class="icon icon-worktime"><use xlink:href="#icon-worktime"></use></svg><span>с 10:00 до 22:00</span></div><div class="baloon__line"><svg class="icon icon-address"><use xlink:href="#icon-address"></use></svg><span>Московская область, город Серпухов, Московское шоссе, 55</span></div></div></div>',
+							balloonContent: '\n\n<div class="balloon">\n\t<div class="balloon__header">\n\t\t<div class="balloon__title">\n\t\t\t<a href="#">Медико-биологический центр Фармалад</a>\n\t\t</div>\n\t</div>\n\t<div class="balloon__body">\n\t\t<div class="balloon__address">\n\t\t\t<svg class="icon icon-mark"><use xlink:href="#icon-mark"></use></svg>\n\t\t\t<span class="">г. Воронеж, ул. Правды, дом 26, офис 2</span>\n\t\t</div>\n\t\t<div class="balloon__phone">\n\t\t\t<svg class="icon icon-tel"><use xlink:href="#icon-tel"></use></svg>\n\t\t\t<a href="tel:+7 (926) 047-32-22" class="">+7 (926) 047-32-22</a>\n\t\t</div>\n\t\t<div class="balloon__email">\n\t\t\t<svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>\n\t\t\t<span class="">somemail@mail.com</span>\n\t\t</div>\n\t\t<div class="balloon__work-time">\n\t\t\t<svg class="icon icon-time"><use xlink:href="#icon-time"></use></svg>\n\t\t\t<span class="">с 10:00 до 22:00</span>\n\t\t</div>\n\t</div>\n</div>\n\n',
 							hintContent: "Магазин в Серпухове"
 						}, {
 							balloonLayout: r,
