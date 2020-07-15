@@ -64,10 +64,10 @@ $(document).ready(() => {
 	});
 
 	//Mobile menu toggle
-	$('.js-header__menu__btn').click(() => {
+	$('.js-header__menu').click(function(){
+		$(this).toggleClass('open');
 		$('.js-mobile').slideToggle()
-		$('.js-header__menu__btn').toggleClass('header__menu__btn_close')
-	})
+	});
 
 	//Search menu open
 	$('.js-header__search__button').click(() => {
@@ -84,13 +84,30 @@ $(document).ready(() => {
 	//Styles for "select" tag
 	$('.js-network__select').niceSelect()
 
-	//Navigation products submenu
-	$('.js-navigation__products').click(() => {
+	// Navigation products submenu
+	$('.js-navigation__products__button').click(() => {
+		$('.js-navigation__products__button').toggleClass('navigation__products_active')
 		$('.navigation__products__wrapper').toggleClass('js-hover')
 	})
 
 	//Change language
 	$('.js-header__language').click(() => {
 		$('.js-language').slideToggle()
+	})
+
+	//Tablet menu open
+	$('.js-header__tablet-menu').click(function(){
+		$(this).toggleClass('open');
+		$('.js-navigation__list__wrapper').slideToggle()
+	});
+	// $('.js-header__tablet-menu').click(() => {
+	// 	$('.js-navigation__list__wrapper').slideToggle()
+		// $('.navigation__products__wrapper').removeClass('js-hover')
+	// })
+
+	//Mobile menu products toggle
+	$('.js-mobile__products__open').click(() => {
+		$('.mobile__submenu').slideToggle()
+		$('.js-mobile__products').toggleClass('mobile__menu__item_active')
 	})
 })
